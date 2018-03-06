@@ -12,6 +12,7 @@ public class Zad03 {
 		List<String> list = new ArrayList<>(Arrays.asList("Ala", "ma", "kota", "a", "kot", "ma", "Ale."));
 		
 		
+		list.replaceAll(String::toUpperCase);
 		list.forEach((x) -> System.out.print(x.concat(" ")));
 	}
 

@@ -12,9 +12,10 @@ public class Zad02 {
 		List<String> list = new ArrayList<>(Arrays.asList("Ala", "ma", "kota", "a", "kot", "ma", "Ale."));
 		
 		
-
+//		list.removeIf(s -> (s.length() & 1) == 1);
+		list.removeIf(s -> (s.length() % 2) == 1);
 		list.forEach(System.out::println);
-
+//		list.forEach(s -> System.out.println(s+"ssss"));
 	}
 
 }

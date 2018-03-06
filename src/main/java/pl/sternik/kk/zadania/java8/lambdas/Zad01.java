@@ -14,7 +14,7 @@ public class Zad01 {
 
 		StringBuilder sb = new StringBuilder();
 		
-
+		list.forEach(s -> sb.append(s.charAt(0)));
 		String result = sb.toString();
 		System.out.println("rezultat = " + result);
 	}

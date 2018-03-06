@@ -18,9 +18,7 @@ public class Zad04 {
     map.put("Ale", 1);
 
     StringBuilder sb = new StringBuilder();
-
-
-
+    map.forEach((k, v) -> sb.append(String.format("%s-%s ", k, v)));
     String result = sb.toString();
     System.out.println("rezultat = " + result);
   }
