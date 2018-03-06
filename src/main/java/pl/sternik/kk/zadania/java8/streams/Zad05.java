@@ -12,8 +12,10 @@ public class Zad05 {
 	public static void main(String[] args) {
 	    List<String> list = Arrays.asList("Ala", "ma", "kota", "a", "kot", "ma", "Ale.");
 
-	    List<String> newList ;
+	    List<String> newList = list.stream()
+	            .map(String::toLowerCase)
+	            .collect(Collectors.toList());
 
-//	        newList.forEach(System.out::println);
+	        newList.forEach(System.out::println);
   }
 }

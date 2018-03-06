@@ -13,7 +13,8 @@ public class Zad06 {
 	    List<String> list = Arrays.asList("Ala", "ma", "kota", "a", "kot", "ma", "Ale.");
 
 	    List<String> newList = list.stream()
-
+	            .filter(w -> w.length() % 2 == 1)
+	            .map(String::toLowerCase)
 	            .collect(Collectors.toList());
 
 	        newList.forEach(System.out::println);
