@@ -71,22 +71,26 @@ public class Zad12 {
 		// Jeżeli w zmiennej tick jest obiekt wyswietl go.
 		System.out.println("Typowy NPE - neutralizacja v1:");
 		ot = Optional.ofNullable(tick);
-		//tu
+		ot.ifPresent(s -> System.out.println(s + "ddddd"));
 
 		// Jeżeli w zmiennej tick jest obiekt wyświetl go a jeżeli nie to
 		// wyświetl NULL_TICK
 		System.out.println("Typowy NPE - neutralizacja v2:");
-		//tu
+		System.out.println(ot.orElse(Tick.NULL_TICK).toString());
 
 		// Jeżeli w zmiennej tick jest obbiekt to go wyświetl, a jeżel nie to
 		// napis "Nic nie było"
 		System.out.println("Typowy NPE - neutralizacja v3:");
-		//tu
+		if (ot.isPresent()) {
+			System.out.println(ot.get());
+		} else {
+			System.out.println("Nic nie było!");
+		}
 
 		// Jeżeli w zmiennej tick jest obiekt wyświetl go a jeżeli nie to
 		// wyrzuć wyjątek IllegalStateException
 		System.out.println("Typowy NPE - neutralizacja v4:");
-		//tu
+		System.out.println(ot.orElseThrow(IllegalStateException::new).toString());
 
 	}
 }
