@@ -52,10 +52,6 @@ public class Zad12 {
 		return Optional.ofNullable(returnRandomlyNull()).orElse(Tick.NULL_TICK);
 	}
 
-	/**
-	 *
-	 * @throws IOException
-	 */
 	public static void main(String[] args) throws IOException {
 
 		Tick tick;
@@ -87,10 +83,17 @@ public class Zad12 {
 			System.out.println("Nic nie było!");
 		}
 
+        System.out.println("--------- map vs flatMap ---------");
+        for (int i = 0; i < 5; i++) {
+            Optional<Tick> tickInOptional = returnRandomlyOptional();
+            System.out.print(tickInOptional.map(t -> Optional.of(t).map(n -> n.name.toLowerCase())));
+            System.out.print("  versus  ");
+            System.out.println(tickInOptional.flatMap(t -> Optional.of(t).map(n -> n.name.toLowerCase())));
+        }
+
 		// Jeżeli w zmiennej tick jest obiekt wyświetl go a jeżeli nie to
 		// wyrzuć wyjątek IllegalStateException
 		System.out.println("Typowy NPE - neutralizacja v4:");
 		System.out.println(ot.orElseThrow(IllegalStateException::new).toString());
-
 	}
 }
