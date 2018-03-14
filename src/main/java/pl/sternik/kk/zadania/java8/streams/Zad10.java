@@ -20,9 +20,13 @@ public class Zad10 {
    */
 	public static void main(String[] args) throws IOException {
 	    try (BufferedReader reader = 
-	            Files.newBufferedReader(Paths.get("wiersz.txt"))) {
+	            Files.newBufferedReader(Paths.get("wiersz-full.txt"))) {
 
 	    	List<String> words = reader.lines()
+	              .flatMap(line -> Stream.of(line.split(REGEX)))
+	              .map(String::toLowerCase)
+	              .distinct()
+	              .sorted()
 	              .collect(Collectors.toList());
 
 	          words.stream().forEach(System.out::println);

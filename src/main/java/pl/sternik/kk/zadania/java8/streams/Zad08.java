@@ -14,6 +14,7 @@ public class Zad08 {
 	public static void main(String[] args) throws IOException {
         try (BufferedReader reader = Files.newBufferedReader(Paths.get("wiersz.txt"), StandardCharsets.UTF_8)) {
 
+        	System.out.println(reader.lines().count());
         }
   }
 }

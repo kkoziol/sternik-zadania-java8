@@ -12,7 +12,11 @@ public class Zad07 {
 	public static void main(String[] args) {
 	    List<String> list = Arrays.asList("Ala", "ma", "kota", "a", "kot", "ma", "Ale.");
 
-	    String merged ;
-//	    System.out.println(merged);
+	    String merged = list.stream()
+	            .skip(2)
+	            .filter( s -> !"a".equals(s))
+	            .limit(3)
+	            .collect(Collectors.joining("-"));
+	    System.out.println(merged);
   }
 }
